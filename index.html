@@ -13,6 +13,7 @@
     <script>
       function init() {
         var stage = new createjs.Stage("gameCanvas");
+        stage.canvas.fillStyle="red";
 
         var view = new Asteroids.GameView(stage).start();
 
@@ -23,9 +24,19 @@
       html, body, canvas {
         padding: 0px;
         margin: 0px;
+      }
+
+      body {
+        background-color: #ccc;
+      }
+
+      canvas {
         border: 1px solid black;
         width: 700px;
         height: 700px;
+        background-color: black;
+        display: block;
+        margin: auto;
       }
     </style>
   </head>
