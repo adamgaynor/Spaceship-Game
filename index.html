@@ -15,7 +15,8 @@
   </head>
 
   <body>
-    <canvas id="game-canvas"></canvas>
+    <canvas id="game-canvas" width="700" height="700"></canvas>
+    <script src="https://code.createjs.com/easeljs-0.8.1.min.js"></script>
 
     <!-- // <script src="lib/keymaster.js"></script> -->
     <script src="lib/movingObject.js"></script>
@@ -27,11 +28,9 @@
     <script src="lib/gameView.js"></script>
 
     <script>
-      var canvasEl = document.getElementById("game-canvas");
-      canvasEl.width = 700;
-      canvasEl.height = 700;
-      var ctx = canvasEl.getContext("2d");
-      var view = new Asteroids.GameView(ctx).start();
+    var canvas = document.getElementById("game-canvas");
+    var stage = new createjs.Stage(canvas);
+    var view = new Asteroids.GameView(stage).start();
 
     </script>
   </body>
