@@ -4,15 +4,16 @@
     <title>Asteroids</title>
 
     <script src="https://code.createjs.com/createjs-2015.05.21.min.js"></script>
+    <script src="lib/gameView.js"></script>
+
+
+
     <script>
       function init() {
-        var stage = new createjs.Stage("demoCanvas");
-        var circle = new createjs.Shape();
-        circle.graphics.beginFill("DeepSkyBlue").drawCircle(0, 0, 50);
-        circle.x = 100;
-        circle.y = 100;
-        stage.addChild(circle);
-        stage.update();
+        var stage = new createjs.Stage("gameCanvas");
+
+        var view = new Asteroids.GameView(stage).start();
+
       }
     </script>
 
@@ -30,7 +31,7 @@
 
 
   <body onload="init();">
-    <canvas id="demoCanvas" width="700" height="700"></canvas>
+    <canvas id="gameCanvas" width="700" height="700"></canvas>
   </body>
 
 </html>
