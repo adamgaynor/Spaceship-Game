@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Asteroids</title>
+    <title>Spaceships</title>
 
     <script src="https://code.createjs.com/createjs-2015.05.21.min.js"></script>
     <script src="https://code.createjs.com/tweenjs-0.6.1.min.js"></script>
@@ -39,6 +39,17 @@
         background-color: #ccc;
       }
 
+      #content {
+        width: 700px;
+        margin: auto;
+        position: relative;
+      }
+
+      h1 {
+        display: block;
+        text-align: center;
+      }
+
       canvas {
         border: 1px solid black;
         width: 700px;
@@ -49,13 +60,29 @@
         margin-top: 50px;
         cursor: none;
       }
+
+      button {
+        position: absolute;
+        z-index: 1;
+        bottom: 330px;
+        left: 280px;
+        padding: 20px 40px;
+        background-color: green;
+        color: white;
+        font-family: sans-serif;
+        font-size: 24px;
+      }
     </style>
   </head>
 
 
 
   <body onload="init();">
-    <canvas id="gameCanvas" width="700" height="700"></canvas>
+    <div id="content">
+      <h1>Shoot Them All!</h1>
+      <canvas id="gameCanvas" width="700" height="700"></canvas>
+      <button id="start">Start</button>
+    </div>
   </body>
 
 </html>
