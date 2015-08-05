@@ -57,7 +57,6 @@
         background-color: black;
         display: block;
         margin: auto;
-        margin-top: 50px;
         cursor: none;
       }
 
@@ -80,6 +79,15 @@
         cursor: default;
       }
 
+      p {
+        display: none;
+        color: green;
+        left: 180px;
+        top: 100px;
+        text-align: center;
+        font-size: 24px;
+      }
+
     </style>
   </head>
 
@@ -88,6 +96,13 @@
   <body onload="init();">
     <div id="content">
       <h1>Shoot Them All!</h1>
+      <p id="info-text" class="show">
+        Your spaceship follows the mouse
+        <br><br>
+        Left click to shoot
+        <br><br>
+        Click <strong>START</strong> to begin
+      </p>
       <canvas id="gameCanvas" width="700" height="700"></canvas>
       <button id="start">Start</button>
     </div>
