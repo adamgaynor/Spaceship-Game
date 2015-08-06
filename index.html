@@ -19,12 +19,28 @@
 
     <script>
       function init() {
-        STAGE_WIDTH = 700;
-        STAGE_HEIGHT = 700;
+        STAGE_WIDTH = window.innerWidth - 200;
+        STAGE_HEIGHT = window.innerHeight - 200;
+
+        if (STAGE_WIDTH < 400) { STAGE_WIDTH = 400; }
+        if (STAGE_HEIGHT < 400) { STAGE_HEIGHT = 400; }
+
+        // window.addEventListener(
+        //     'load',
+        //     function () {
+        //       console.log("load");
+        //         var canvas = document.getElementsById('gameCanvas');
+        //
+        //         Asteroids.Util.scaleCanvas(canvas);
+        //     },
+        //     false
+        // );
 
         stage = new createjs.Stage("gameCanvas");
 
         view = new Asteroids.GameView(stage).showStartButton();
+
+
 
       }
     </script>
@@ -40,9 +56,14 @@
       }
 
       #content {
-        width: 700px;
+        /*width: 700px;*/
         margin: auto;
         position: relative;
+      }
+
+      #container {
+        overflow: hidden;
+        background-color: red;
       }
 
       h1 {
@@ -52,8 +73,8 @@
 
       canvas {
         border: 1px solid black;
-        width: 700px;
-        height: 700px;
+        /*width: 700px;*/
+        /*height: 700px;*/
         background-color: black;
         display: block;
         margin: auto;
@@ -63,8 +84,9 @@
       button {
         position: absolute;
         z-index: 1;
-        bottom: 330px;
-        left: 280px;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 60%;
         padding: 20px 40px;
         background-color: green;
         color: white;
@@ -80,12 +102,18 @@
       }
 
       p {
+        width: 370px;
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
         display: none;
         color: green;
-        left: 180px;
-        top: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 25%;
         text-align: center;
         font-size: 24px;
+        z-index: 1;
       }
 
     </style>
@@ -103,7 +131,8 @@
         <br><br>
         Click <strong>START</strong> to begin
       </p>
-      <canvas id="gameCanvas" width="700" height="700"></canvas>
+       <!-- width="700" height="700" -->
+      <canvas id="gameCanvas"></canvas>
       <button id="start">Start</button>
     </div>
   </body>
